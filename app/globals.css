@@ -127,6 +127,25 @@
   }
 }
 
+/* Reduced vertical spacing globally with tighter line-heights and reduced margins */
+@layer utilities {
+  .text-tighter {
+    line-height: 1.1;
+  }
+
+  .leading-tighter {
+    line-height: 1.2;
+  }
+
+  .leading-snug {
+    line-height: 1.35;
+  }
+
+  .space-y-tight > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
 /* Add more sophisticated micro-animations */
 @keyframes fadeInUp {
   from {
@@ -197,13 +216,13 @@
   animation: scaleIn 0.6s ease-out forwards;
 }
 
-/* Reverted to simple luxury gold gradient */
+/* Updated to exact peachy-bronze to golden gradient from reference image */
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #f4d7a6 50%, #d4a574 100%);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #f4d7a6 50%, #d4a574 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

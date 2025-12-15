@@ -69,8 +69,8 @@ export default function ProcessSection() {
 
           <div className="flex justify-center">
             <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 h-14"
+              size="sm"
+              className="bg-gold-gradient text-primary-foreground hover:opacity-90 text-xs h-9 px-8 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50 duration-300"
               onClick={scrollToForm}
             >
               Schedule a Call

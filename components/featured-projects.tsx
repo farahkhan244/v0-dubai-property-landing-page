@@ -116,10 +116,10 @@ export default function FeaturedProjects() {
                 </div>
 
                 <Button
-                  className="w-full bg-gold-gradient text-primary-foreground hover:opacity-90 transition-all hover:scale-[1.02] duration-300"
-                  onClick={scrollToForm}
+                  className="w-full bg-gold-gradient text-primary-foreground hover:opacity-90 transition-all hover:scale-[1.02] duration-300 h-8 text-xs"
+                  asChild
                 >
-                  Request Details
+                  <a href="tel:+971528272886">Call Now</a>
                 </Button>
               </div>
             </div>

@@ -35,30 +35,30 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 space-y-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">Frequently Asked Questions</h2>
+            <p className="text-lg text-muted-foreground">
               Everything you need to know about investing in Dubai property
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6"
-              >
-                <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
-              </AccordionItem>
+              <Accordion key={index} type="single" collapsible>
+                <AccordionItem value={`item-${index}`} className="bg-card border border-border rounded-lg px-4">
+                  <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline text-sm py-3">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-sm leading-snug pb-3">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>
