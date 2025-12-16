@@ -16,24 +16,24 @@ export const metadata: Metadata = {
     "Expert property consultant specializing in Dubai off-plan properties and investment opportunities. Contact Farheen Khan for personalized guidance.",
   keywords: ["Dubai property", "off-plan properties", "Dubai real estate", "property consultant", "Dubai investment"],
   generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
+  // icons: {
+  //   icon: [
+  //     {
+  //       url: "/icon-light-32x32.png",
+  //       media: "(prefers-color-scheme: light)",
+  //     },
+  //     {
+  //       url: "/icon-dark-32x32.png",
+  //       media: "(prefers-color-scheme: dark)",
+  //     },
+  //     {
+  //       url: "/icon.svg",
+  //       type: "image/svg+xml",
+  //     },
+  //   ],
+  //   apple: "/apple-icon.png",
+  // },
+// }
 
 export default function RootLayout({
   children,
