@@ -1,36 +1,40 @@
-// List all images in Cloudinary account using the Admin API
-const cloudName = "dudkrsokf";
+const base = "https://res.cloudinary.com/dudkrsokf/image/upload";
+
+// Test a small batch first - we know Solaya3 works with _kowhyt suffix
+// This means filenames have random suffixes. Let's use the Admin API differently.
 const apiKey = "932626876892996";
 const apiSecret = "8R0CwjwomqLmWjjUVusPa0uipyo";
-
 const auth = Buffer.from(`${apiKey}:${apiSecret}`).toString("base64");
 
-async function listResources(nextCursor = null) {
-  let url = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image?max_results=500`;
-  if (nextCursor) {
-    url += `&next_cursor=${nextCursor}`;
-  }
+// Use Admin API to get resources with derived=false and type=upload
+const url = `https://api.cloudinary.com/v1_1/dudkrsokf/resources/search`;
+const res = await fetch(url, {
+  method: "POST",
+  headers: {
+    Authorization: `Basic ${auth}`,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    expression: "resource_type:image",
+    max_results: 50,
+    sort_by: [{ created_at: "desc" }],
+    with_field: ["context", "tags"],
+  }),
+});
 
-  const res = await fetch(url, {
-    headers: {
-      Authorization: `Basic ${auth}`,
-    },
-  });
+const data = await res.json();
+console.log("[v0] Status:", res.status);
+console.log("[v0] Total:", data.total_count);
+console.log("[v0] Resources count:", data.resources?.length);
 
-  if (!res.ok) {
-    console.error("Error:", res.status, await res.text());
-    return;
-  }
-
-  const data = await res.json();
-
-  for (const resource of data.resources) {
-    console.log(`${resource.public_id} | ${resource.secure_url}`);
-  }
-
-  if (data.next_cursor) {
-    await listResources(data.next_cursor);
+if (data.resources) {
+  for (const r of data.resources.slice(0, 50)) {
+    console.log("[v0] IMG:", r.public_id, "|", r.format, "|", r.secure_url);
   }
 }
 
-listResources();
+if (data.error) {
+  console.log("[v0] Error:", JSON.stringify(data.error));
+}
+
+console.log("[v0] Rate limit:", JSON.stringify(data.rate_limit_allowed));
