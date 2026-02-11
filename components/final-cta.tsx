@@ -5,7 +5,15 @@ import { Button } from "@/components/ui/button"
 export default function FinalCTA() {
   return (
     <section className="py-14 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent" />
+      {/* Dubai skyline background with light opacity */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/dubai-landmark-cta.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-15"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/80" />
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -32,7 +40,7 @@ export default function FinalCTA() {
               className="text-xs px-4 h-7 border-primary/50 text-foreground hover:bg-white hover:text-background transition-all hover:scale-105 bg-transparent duration-300"
               asChild
             >
-              <a href="mailto:farahkhan244@gmail.com">Email</a>
+              <a href="mailto:farheen@stageproperties.com">Email</a>
             </Button>
           </div>
         </div>

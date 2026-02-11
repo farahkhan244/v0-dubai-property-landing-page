@@ -3,11 +3,6 @@ import FeaturedProjects from "@/components/featured-projects"
 import LeadForm from "@/components/lead-form"
 import AbuDhabiSection from "@/components/abu-dhabi-section"
 import WaterfrontSection from "@/components/waterfront-section"
-import WhyInvestDubai from "@/components/why-invest-dubai"
-import ProcessSection from "@/components/process-section"
-import Testimonials from "@/components/testimonials"
-import DevelopersStrip from "@/components/developers-strip"
-import FAQSection from "@/components/faq-section"
 import FinalCTA from "@/components/final-cta"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
@@ -20,11 +15,6 @@ export default function Home() {
       <LeadForm />
       <AbuDhabiSection />
       <WaterfrontSection />
-      <WhyInvestDubai />
-      <ProcessSection />
-      <Testimonials />
-      <DevelopersStrip />
-      <FAQSection />
       <FinalCTA />
       <Footer />
       <WhatsAppButton />

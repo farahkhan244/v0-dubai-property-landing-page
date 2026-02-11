@@ -22,11 +22,11 @@ export default function Footer() {
                 <span>+971 55 112 2732</span>
               </a>
               <a
-                href="mailto:farahkhan244@gmail.com"
+                href="mailto:farheen@stageproperties.com"
                 className="flex items-center gap-2 hover:text-white transition-colors text-sm"
               >
                 <Mail className="w-3.5 h-3.5" />
-                <span>farahkhan244@gmail.com</span>
+                <span>farheen@stageproperties.com</span>
               </a>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/farheenkhan"
+                href="https://www.linkedin.com/in/farheenk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center hover:bg-white hover:border-primary transition-all group"

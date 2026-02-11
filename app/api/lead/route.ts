@@ -5,8 +5,34 @@ export async function POST(request: Request) {
     const data = await request.json()
     const { name, email, phone, projectInterested, message } = data
 
-    // Send email notification using a simple fetch to a mail service
-    // For now, log the lead and return success
+    const notifyEmail = "farheen@stageproperties.com"
+
+    // Send email via Resend if API key is available
+    const resendApiKey = process.env.RESEND_API_KEY
+    if (resendApiKey) {
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${resendApiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Farheen Khan Website <noreply@stageproperties.com>",
+          to: [notifyEmail],
+          subject: `New Lead: ${name} - ${projectInterested || "General Inquiry"}`,
+          html: `
+            <h2>New Lead from Website</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Project Interested:</strong> ${projectInterested || "Not specified"}</p>
+            <p><strong>Message:</strong> ${message || "No message"}</p>
+            <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+          `,
+        }),
+      })
+    }
+
     console.log("New lead received:", {
       name,
       email,
@@ -14,7 +40,7 @@ export async function POST(request: Request) {
       projectInterested,
       message,
       timestamp: new Date().toISOString(),
-      notifyEmail: "farahkhan244@gmail.com",
+      notifyEmail,
     })
 
     return NextResponse.json({ success: true, message: "Lead received successfully" })

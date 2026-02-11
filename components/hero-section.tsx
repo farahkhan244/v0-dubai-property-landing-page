@@ -1,15 +1,18 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Search } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
+import { useRouter } from "next/navigation"
 
 export default function HeroSection() {
+  const router = useRouter()
   const [scrollY, setScrollY] = useState(0)
   const [cityOpen, setCityOpen] = useState(false)
   const [priceOpen, setPriceOpen] = useState(false)
   const [selectedCity, setSelectedCity] = useState("")
   const [selectedPrice, setSelectedPrice] = useState("")
+  const [projectSearch, setProjectSearch] = useState("")
   const cityRef = useRef<HTMLDivElement>(null)
   const priceRef = useRef<HTMLDivElement>(null)
 
@@ -28,6 +31,15 @@ export default function HeroSection() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
+  const handleSearch = () => {
+    const event = new CustomEvent("search-projects", {
+      detail: { city: selectedCity, price: selectedPrice, query: projectSearch },
+    })
+    window.dispatchEvent(event)
+    const section = document.getElementById("featured-projects")
+    if (section) section.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div
@@ -43,11 +55,11 @@ export default function HeroSection() {
       <div className="w-full px-4 py-16 relative z-20">
         <div className="max-w-5xl mx-auto text-center space-y-3 animate-fade-in-up">
           <p className="text-white text-xs uppercase tracking-widest font-medium">
-            Property Advisor at Stage Properties
+            Certified Off-Plan Property Advisor at Stage Properties
           </p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-gold-gradient">
-            Invest Smart in Dubai's Off-Plan Properties
+            {"Invest Smart in Dubai's Off-Plan Properties"}
           </h1>
 
           <p className="text-xs text-white/90 leading-snug max-w-xl mx-auto">
@@ -57,7 +69,7 @@ export default function HeroSection() {
           <div className="space-y-0.5 pt-1">
             <h2 className="text-xl font-bold text-foreground">Farheen Khan</h2>
             <p className="text-gold-gradient text-sm font-medium">Property Advisor | Stage Properties</p>
-            <p className="text-muted-foreground text-xs">+971 55 112 2732 | farahkhan244@gmail.com</p>
+            <p className="text-muted-foreground text-xs">+971 55 112 2732 | farheen@stageproperties.com</p>
           </div>
 
           <div className="flex flex-wrap gap-2 justify-center pt-1">
@@ -86,19 +98,19 @@ export default function HeroSection() {
               <span className="text-gold-gradient">YOUR HOME</span>
             </h2>
 
-            <div className="border border-primary/30 bg-background/60 backdrop-blur-sm flex items-center justify-center gap-0 p-0">
+            <div className="border border-primary/30 bg-background/60 backdrop-blur-sm flex items-center gap-0 p-0">
               {/* City Dropdown */}
-              <div ref={cityRef} className="relative flex-1">
+              <div ref={cityRef} className="relative flex-shrink-0">
                 <button
                   onClick={() => { setCityOpen(!cityOpen); setPriceOpen(false) }}
-                  className="w-full flex items-center justify-between gap-2 px-4 py-3 text-left hover:bg-white/5 transition-colors"
+                  className="flex items-center justify-between gap-2 px-4 py-3 text-left hover:bg-white/5 transition-colors"
                 >
-                  <span className="text-gold-gradient font-medium text-xs">{selectedCity || "CITY"}</span>
+                  <span className="text-gold-gradient font-medium text-xs">{selectedCity || "DUBAI"}</span>
                   <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform ${cityOpen ? "rotate-180" : ""}`} />
                 </button>
                 {cityOpen && (
-                  <div className="absolute top-full left-0 w-full bg-card border border-border z-50 shadow-xl">
-                    {["Abu Dhabi", "Ras Al Khaimah"].map((city) => (
+                  <div className="absolute top-full left-0 w-48 bg-card border border-border z-50 shadow-xl">
+                    {["Dubai", "Ras Al Khaimah", "Abu Dhabi"].map((city) => (
                       <button
                         key={city}
                         onClick={() => { setSelectedCity(city); setCityOpen(false) }}
@@ -114,17 +126,25 @@ export default function HeroSection() {
               <div className="h-8 w-px bg-border" />
 
               {/* Price Dropdown */}
-              <div ref={priceRef} className="relative flex-1">
+              <div ref={priceRef} className="relative flex-shrink-0">
                 <button
                   onClick={() => { setPriceOpen(!priceOpen); setCityOpen(false) }}
-                  className="w-full flex items-center justify-between gap-2 px-4 py-3 text-left hover:bg-white/5 transition-colors"
+                  className="flex items-center justify-between gap-2 px-4 py-3 text-left hover:bg-white/5 transition-colors"
                 >
                   <span className="text-gold-gradient font-medium text-xs">{selectedPrice || "PRICE"}</span>
                   <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform ${priceOpen ? "rotate-180" : ""}`} />
                 </button>
                 {priceOpen && (
-                  <div className="absolute top-full left-0 w-full bg-card border border-border z-50 shadow-xl">
-                    {["Under AED 1M", "AED 1M - 2M", "AED 2M - 5M", "AED 5M - 10M", "Above AED 10M"].map((price) => (
+                  <div className="absolute top-full left-0 w-48 bg-card border border-border z-50 shadow-xl">
+                    {[
+                      "Under AED 1M",
+                      "AED 1M - 2M",
+                      "AED 2M - 5M",
+                      "AED 5M - 10M",
+                      "AED 10M - 15M",
+                      "AED 15M - 25M",
+                      "Above AED 25M",
+                    ].map((price) => (
                       <button
                         key={price}
                         onClick={() => { setSelectedPrice(price); setPriceOpen(false) }}
@@ -136,6 +156,31 @@ export default function HeroSection() {
                   </div>
                 )}
               </div>
+
+              <div className="h-8 w-px bg-border" />
+
+              {/* Project Interested Input */}
+              <div className="flex-1 flex items-center">
+                <input
+                  type="text"
+                  value={projectSearch}
+                  onChange={(e) => setProjectSearch(e.target.value)}
+                  placeholder="PROJECT INTERESTED"
+                  className="w-full bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground/50 text-xs px-4 py-3"
+                  onKeyDown={(e) => { if (e.key === "Enter") handleSearch() }}
+                />
+              </div>
+
+              <div className="h-8 w-px bg-border" />
+
+              {/* Search Button */}
+              <button
+                onClick={handleSearch}
+                className="px-4 py-3 hover:bg-white/10 transition-colors"
+                aria-label="Search properties"
+              >
+                <Search className="w-4 h-4 text-gold-gradient" />
+              </button>
             </div>
           </div>
         </div>
