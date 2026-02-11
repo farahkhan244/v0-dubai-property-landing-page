@@ -23,7 +23,7 @@ async function listResources(nextCursor = null) {
   }
 
   const data = await res.json();
-  
+
   for (const resource of data.resources) {
     console.log(`${resource.public_id} | ${resource.secure_url}`);
   }
