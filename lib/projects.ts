@@ -29,7 +29,7 @@ export const projects: Project[] = [
     handover: "Q1 2029",
     paymentPlan: "10% booking, 70% during construction, 20% on handover",
     image: "/projects/palmiera.jpg",
-    gallery: ["/projects/palmiera.jpg"],
+    gallery: ["/projects/palmiera.jpg", "/projects/palmiera-2.jpg", "/projects/palmiera-3.jpg"],
   },
   {
     slug: "the-valley",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     handover: "2026-2030",
     paymentPlan: "10% booking, 70% during construction, 20% on handover",
     image: "/projects/the-valley.jpg",
-    gallery: ["/projects/the-valley.jpg"],
+    gallery: ["/projects/the-valley.jpg", "/projects/the-valley-2.jpg", "/projects/the-valley-3.jpg"],
   },
   {
     slug: "emaar-south",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     handover: "2028-2029",
     paymentPlan: "10% booking, 70% construction-linked, 20% on handover",
     image: "/projects/emaar-south.jpg",
-    gallery: ["/projects/emaar-south.jpg"],
+    gallery: ["/projects/emaar-south.jpg", "/projects/emaar-south-2.jpg", "/projects/emaar-south-3.jpg"],
   },
   {
     slug: "emaar-beachfront",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     handover: "Q3 2029",
     paymentPlan: "10% booking, 80% during construction, 10% on handover",
     image: "/projects/emaar-beachfront.jpg",
-    gallery: ["/projects/emaar-beachfront.jpg"],
+    gallery: ["/projects/emaar-beachfront.jpg", "/projects/emaar-beachfront-2.jpg", "/projects/emaar-beachfront-3.jpg"],
     isWaterfront: true,
   },
   {
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     handover: "Q2 2029",
     paymentPlan: "20% booking, 50% during construction, 30% on handover",
     image: "/projects/mercedes-benz.jpg",
-    gallery: ["/projects/mercedes-benz.jpg"],
+    gallery: ["/projects/mercedes-benz.jpg", "/projects/mercedes-benz-2.jpg", "/projects/mercedes-benz-3.jpg"],
   },
   {
     slug: "binghatti-luxuria",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     handover: "Q3 2027",
     paymentPlan: "20% booking, 50% during construction, 30% on handover",
     image: "/projects/binghatti-luxuria.jpg",
-    gallery: ["/projects/binghatti-luxuria.jpg"],
+    gallery: ["/projects/binghatti-luxuria.jpg", "/projects/binghatti-luxuria-2.jpg", "/projects/binghatti-luxuria-3.jpg"],
   },
   {
     slug: "binghatti-sky-terraces",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     handover: "Q4 2027",
     paymentPlan: "20% booking, 50% during construction, 30% on handover",
     image: "/projects/binghatti-sky-terraces.jpg",
-    gallery: ["/projects/binghatti-sky-terraces.jpg"],
+    gallery: ["/projects/binghatti-sky-terraces.jpg", "/projects/binghatti-sky-terraces-2.jpg", "/projects/binghatti-sky-terraces-3.jpg"],
   },
   {
     slug: "the-edit",
@@ -135,7 +135,7 @@ export const projects: Project[] = [
     handover: "Q2 2030",
     paymentPlan: "20% booking, 60% during construction, 20% on handover",
     image: "/projects/the-edit.jpg",
-    gallery: ["/projects/the-edit.jpg"],
+    gallery: ["/projects/the-edit.jpg", "/projects/the-edit-2.jpg", "/projects/the-edit-3.jpg"],
   },
   {
     slug: "crestlane",
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     handover: "Q2 2030",
     paymentPlan: "20% booking, 60% construction-linked, 20% on handover",
     image: "/projects/crestlane.jpg",
-    gallery: ["/projects/crestlane.jpg"],
+    gallery: ["/projects/crestlane.jpg", "/projects/crestlane-2.jpg", "/projects/crestlane-3.jpg"],
   },
   {
     slug: "solaya",
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     handover: "2029",
     paymentPlan: "20% booking, 60% during construction, 20% on handover",
     image: "/projects/solaya.jpg",
-    gallery: ["/projects/solaya.jpg"],
+    gallery: ["/projects/solaya.jpg", "/projects/solaya-2.jpg", "/projects/solaya-3.jpg"],
     isWaterfront: true,
   },
   {
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     handover: "Q2 2029",
     paymentPlan: "10% booking, 70% during construction, 20% on handover",
     image: "/projects/nad-al-sheba.jpg",
-    gallery: ["/projects/nad-al-sheba.jpg"],
+    gallery: ["/projects/nad-al-sheba.jpg", "/projects/nad-al-sheba-2.jpg", "/projects/nad-al-sheba-3.jpg"],
   },
   {
     slug: "bella-by-passo",
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     handover: "Q3 2029",
     paymentPlan: "20% booking, 60% during construction, 20% on handover",
     image: "/projects/bella-by-passo.jpg",
-    gallery: ["/projects/bella-by-passo.jpg"],
+    gallery: ["/projects/bella-by-passo.jpg", "/projects/bella-by-passo-2.jpg", "/projects/bella-by-passo-3.jpg"],
     isWaterfront: true,
   },
   {
@@ -212,7 +212,7 @@ export const projects: Project[] = [
     handover: "2029",
     paymentPlan: "20% booking, 60% during construction, 20% on handover",
     image: "/projects/hado.jpg",
-    gallery: ["/projects/hado.jpg"],
+    gallery: ["/projects/hado.jpg", "/projects/hado-2.jpg", "/projects/hado-3.jpg"],
     isWaterfront: true,
   },
   {
@@ -228,7 +228,7 @@ export const projects: Project[] = [
     handover: "Q4 2027",
     paymentPlan: "20% booking, 50% during construction, 30% on handover",
     image: "/projects/aqua-maya.jpg",
-    gallery: ["/projects/aqua-maya.jpg"],
+    gallery: ["/projects/aqua-maya.jpg", "/projects/aqua-maya-2.jpg", "/projects/aqua-maya-3.jpg"],
     isWaterfront: true,
   },
 ]

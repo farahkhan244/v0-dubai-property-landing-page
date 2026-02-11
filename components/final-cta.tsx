@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button"
 
 export default function FinalCTA() {
   return (
-    <section className="py-14 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Dubai skyline background with light opacity */}
       <div className="absolute inset-0 z-0">
         <img
           src="/dubai-landmark-cta.jpg"
-          alt=""
-          className="w-full h-full object-cover opacity-15"
+          alt="Dubai skyline"
+          className="w-full h-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/70" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
