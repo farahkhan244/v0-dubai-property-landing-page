@@ -12,30 +12,28 @@ export default function LeadForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
 
     const formData = new FormData(e.currentTarget)
-    const name = formData.get("name") as string
-    const email = formData.get("email") as string
-    const phone = formData.get("phone") as string
-    const projectInterested = formData.get("projectInterested") as string
-    const message = formData.get("message") as string
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Project Interested: ${projectInterested || "Not specified"}`,
-      `Message: ${message || "No message"}`,
-    ].join("\n")
-
-    const mailtoLink = `mailto:farheen@stageproperties.com?subject=${encodeURIComponent("New Website Lead – Stage Properties")}&body=${encodeURIComponent(body)}`
-    window.open(mailtoLink, "_self")
-
-    setIsSubmitted(true)
-    setIsLoading(false)
+    try {
+      const res = await fetch("https://formspree.io/f/mojneqqg", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      if (res.ok) {
+        setIsSubmitted(true)
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   if (isSubmitted) {

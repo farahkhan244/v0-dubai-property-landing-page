@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import SiteHeader from "@/components/site-header"
 import { ArrowLeft } from "lucide-react"
 import type { Project } from "@/lib/projects"
 import Link from "next/link"
@@ -10,6 +11,9 @@ import Footer from "@/components/footer"
 export default function ProjectDetailClient({ project }: { project: Project }) {
   return (
     <main className="min-h-screen bg-background">
+      {/* Header */}
+      <SiteHeader />
+
       {/* Hero Image */}
       <div className="relative h-[50vh] overflow-hidden">
         <img
@@ -18,7 +22,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-        <div className="absolute top-6 left-6 z-10">
+        <div className="absolute top-16 left-6 z-10">
           <Link href="/#featured-projects">
             <Button
               size="sm"

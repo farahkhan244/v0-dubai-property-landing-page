@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import SiteHeader from "@/components/site-header"
 import { ChevronDown, Search } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
 import { useRouter } from "next/navigation"
@@ -42,6 +43,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      <SiteHeader />
+
       <div
         className="absolute inset-0 z-0 parallax-bg"
         style={{ transform: `translateY(${scrollY * 0.5}px)` }}
@@ -53,26 +56,22 @@ export default function HeroSection() {
       </div>
 
       <div className="w-full px-4 py-16 relative z-20">
-        <div className="max-w-5xl mx-auto text-center space-y-3 animate-fade-in-up">
-          <p className="text-white text-xs uppercase tracking-widest font-medium">
-            Certified Off-Plan Property Advisor at Stage Properties
-          </p>
-
+        <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-gold-gradient">
             {"Invest Smart in Dubai's Off-Plan Properties"}
           </h1>
 
-          <p className="text-xs text-white/90 leading-snug max-w-xl mx-auto">
-            Helping investors find high-growth off-plan opportunities and ready homes in Dubai with expert guidance.
+          <p className="mt-5 text-white text-xs uppercase tracking-widest font-medium">
+            Certified Off-Plan Property Advisor at Stage Properties
           </p>
 
-          <div className="space-y-0.5 pt-1">
+          <div className="space-y-1 mt-5">
             <h2 className="text-xl font-bold text-foreground">Farheen Khan</h2>
             <p className="text-gold-gradient text-sm font-medium">Property Advisor | Stage Properties</p>
             <p className="text-muted-foreground text-xs">+971 55 112 2732 | farheen@stageproperties.com</p>
           </div>
 
-          <div className="flex flex-wrap gap-2 justify-center pt-1">
+          <div className="flex flex-wrap gap-2 justify-center mt-5">
             <Button
               size="sm"
               className="bg-gold-gradient text-primary-foreground hover:opacity-90 text-xs px-4 h-7 transition-all hover:scale-105 duration-300"
@@ -92,7 +91,7 @@ export default function HeroSection() {
           </div>
 
           {/* Property Search Bar */}
-          <div className="max-w-3xl mx-auto space-y-2 pt-4">
+          <div className="max-w-3xl mx-auto space-y-2 mt-6">
             <h2 className="text-xl md:text-2xl font-bold leading-tight">
               {"LET'S FIND "}
               <span className="text-gold-gradient">YOUR HOME</span>
