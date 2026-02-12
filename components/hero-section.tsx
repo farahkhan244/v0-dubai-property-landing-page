@@ -42,6 +42,17 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Header with Logo */}
+      <header className="absolute top-0 left-0 right-0 z-30 py-4 px-4">
+        <div className="flex justify-center">
+          <img
+            src="/stage-logo-white.png"
+            alt="Stage Properties"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
+        </div>
+      </header>
+
       <div
         className="absolute inset-0 z-0 parallax-bg"
         style={{ transform: `translateY(${scrollY * 0.5}px)` }}

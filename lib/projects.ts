@@ -110,7 +110,7 @@ export const projects: Project[] = [
     approxSize: "370 - 3,000+",
     handover: "Q2 2029",
     paymentPlan: "20% booking, 50% during construction, 30% on handover",
-    image: "https://res.cloudinary.com/dudkrsokf/image/upload/v1770812786/Mercedes_Benz10_c6ijwb.png",
+    image: "https://res.cloudinary.com/dudkrsokf/image/upload/v1770812791/Mercedes_Benz4_htq5mi.jpg",
     gallery: [
       "https://res.cloudinary.com/dudkrsokf/image/upload/v1770812791/Mercedes_Benz4_htq5mi.jpg",
       "https://res.cloudinary.com/dudkrsokf/image/upload/v1770812788/Mercedes_Benz1_czxov1.jpg",
