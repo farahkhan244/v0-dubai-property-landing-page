@@ -61,11 +61,7 @@ export default function HeroSection() {
             {"Invest Smart in Dubai's Off-Plan Properties"}
           </h1>
 
-          <p className="mt-4 text-xs text-white/90 leading-snug max-w-xl mx-auto">
-            Helping investors find high-growth off-plan opportunities and ready homes in Dubai with expert guidance.
-          </p>
-
-          <p className="mt-4 text-white text-xs uppercase tracking-widest font-medium">
+          <p className="mt-5 text-white text-xs uppercase tracking-widest font-medium">
             Certified Off-Plan Property Advisor at Stage Properties
           </p>
 
