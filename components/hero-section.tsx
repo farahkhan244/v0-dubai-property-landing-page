@@ -65,13 +65,13 @@ export default function HeroSection() {
             Certified Off-Plan Property Advisor at Stage Properties
           </p>
 
-          <div className="space-y-0.5 mt-3">
+          <div className="space-y-1 mt-5">
             <h2 className="text-xl font-bold text-foreground">Farheen Khan</h2>
             <p className="text-gold-gradient text-sm font-medium">Property Advisor | Stage Properties</p>
             <p className="text-muted-foreground text-xs">+971 55 112 2732 | farheen@stageproperties.com</p>
           </div>
 
-          <div className="flex flex-wrap gap-2 justify-center mt-3">
+          <div className="flex flex-wrap gap-2 justify-center mt-5">
             <Button
               size="sm"
               className="bg-gold-gradient text-primary-foreground hover:opacity-90 text-xs px-4 h-7 transition-all hover:scale-105 duration-300"
