@@ -164,8 +164,15 @@ export const projects: Project[] = [
     approxSize: "4,000 - 9,000+",
     handover: "2029",
     paymentPlan: "20% booking, 60% during construction, 20% on handover",
-    image: "/projects/solaya.jpg",
-    gallery: ["/projects/solaya.jpg", "/projects/solaya-2.jpg", "/projects/solaya-3.jpg"],
+    image: "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814510/Solaya3_kowhyt.png",
+    gallery: [
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814515/Solaya1_nhense.png",
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814513/Solaya2_n8h9ks.png",
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814511/Solaya4_qqelzv.png",
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814510/Solaya5_uvwjbm.png",
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814510/Solaya3_kowhyt.png",
+      "https://res.cloudinary.com/dudkrsokf/image/upload/v1770814509/Solaya6_s6pv6a.png",
+    ],
     isWaterfront: true,
   },
   {
